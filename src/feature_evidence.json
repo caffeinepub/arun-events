@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-homepage-banner-carousel-media-list-to-remove-banner-4-5-and-6-i-e-remove-the-4th-5th-and-6th-entries-from-sitemedia-banners-so-only-banners-1-3-remain-in-the-slider",
-      "featureTitle": "Update the homepage banner carousel media list to remove Banner #4, #5, and #6 (i.e., remove the 4th, 5th, and 6th entries from `siteMedia.banners`) so only Banners #1–#3 remain in the slider.",
+      "featureId": "feature-ensure-the-homepage-banner-carousel-auto-slides-autoplays-by-default-when-there-are-2-banner-images-configured-while-keeping-existing-pause-on-user-interaction-behavior-hover-focus-touch-interaction-should-pause-and-manual-next-previous-controls-should-still-work",
+      "featureTitle": "Ensure the homepage banner carousel auto-slides (autoplays) by default when there are 2+ banner images configured, while keeping existing pause-on-user-interaction behavior (hover/focus/touch interaction should pause and manual next/previous controls should still work).",
       "files": [
-        "frontend/src/config/siteMedia.ts"
+        "frontend/src/components/BannerCarousel.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -15,15 +15,15 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-21"
+        "REQ-38"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-ensure-the-word-ai-case-insensitive-is-not-mentioned-anywhere-in-the-app-s-user-facing-text-or-image-metadata-and-is-not-present-in-any-generated-image-filenames-or-asset-paths-used-by-the-ui-including-banner-images-gallery-images-og-image-paths-and-any-alt-text-templates",
-      "featureTitle": "Ensure the word \"AI\" (case-insensitive) is not mentioned anywhere in the app’s user-facing text or image metadata, and is not present in any generated image filenames or asset paths used by the UI (including banner images, gallery images, OG image paths, and any alt text templates).",
+      "featureId": "feature-remove-the-word-delivery-from-all-user-facing-website-copy-and-replace-it-with-service-appropriate-wording-in-english-use-on-time-service-and-or-on-time-setup-depending-on-context-ensuring-the-site-reads-like-a-service-website",
+      "featureTitle": "Remove the word \"delivery\" from all user-facing website copy and replace it with service-appropriate wording in English (use \"on-time service\" and/or \"on-time setup\" depending on context), ensuring the site reads like a service website.",
       "files": [
-        "frontend/src/config/siteMedia.ts"
+        "frontend/src/pages/HomePage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -33,25 +33,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-22"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-replace-the-currently-referenced-generated-images-for-the-birthday-anniversary-welcome-baby-and-car-boot-decor-galleries-and-the-3-homepage-banners-with-new-photo-style-static-images-whose-filenames-do-not-include-ai-and-update-frontend-src-config-sitemedia-ts-to-use-the-new-filenames-ensure-these-galleries-still-have-multiple-images-each-after-the-replacement",
-      "featureTitle": "Replace the currently-referenced generated images for the Birthday, Anniversary, Welcome Baby, and Car Boot Decor galleries (and the 3 homepage banners) with new photo-style static images whose filenames do not include \"ai\", and update `frontend/src/config/siteMedia.ts` to use the new filenames. Ensure these galleries still have multiple images each after the replacement.",
-      "files": [
-        "frontend/src/config/siteMedia.ts"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-23"
+        "REQ-39"
       ],
       "confidence": "high"
     }

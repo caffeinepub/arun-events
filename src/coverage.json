@@ -1,79 +1,35 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-15T14:56:34.130Z",
+  "generatedAt": "2026-02-15T16:30:10.702Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 3,
-    "implemented": 3,
+    "total": 2,
+    "implemented": 2,
     "items": [
       {
-        "id": "REQ-21",
-        "summary": "Update the homepage banner carousel media list to remove Banner #4, #5, and #6 (i.e., remove the 4th, 5th, and 6th entries from `siteMedia.banners`) so only Banners #1–#3 remain in the slider.",
+        "id": "REQ-38",
+        "summary": "Ensure the homepage banner carousel auto-slides (autoplays) by default when there are 2+ banner images configured, while keeping existing pause-on-user-interaction behavior (hover/focus/touch interaction should pause and manual next/previous controls should still work).",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/config/siteMedia.ts"
+          "frontend/src/components/BannerCarousel.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/config/siteMedia.ts"
+          "frontend/src/components/BannerCarousel.tsx"
         ]
       },
       {
-        "id": "REQ-22",
-        "summary": "Ensure the word \"AI\" (case-insensitive) is not mentioned anywhere in the app’s user-facing text or image metadata, and is not present in any generated image filenames or asset paths used by the UI (including banner images, gallery images, OG image paths, and any alt text templates).",
+        "id": "REQ-39",
+        "summary": "Remove the word \"delivery\" from all user-facing website copy and replace it with service-appropriate wording in English (use \"on-time service\" and/or \"on-time setup\" depending on context), ensuring the site reads like a service website.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/config/siteMedia.ts",
-          "frontend/src/components/BannerCarousel.tsx",
-          "frontend/src/pages/CategoryGalleryPage.tsx",
-          "frontend/src/components/Lightbox.tsx",
-          "frontend/src/hooks/useSeo.ts",
           "frontend/src/pages/HomePage.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/config/siteMedia.ts"
-        ]
-      },
-      {
-        "id": "REQ-23",
-        "summary": "Replace the currently-referenced generated images for the Birthday, Anniversary, Welcome Baby, and Car Boot Decor galleries (and the 3 homepage banners) with new photo-style static images whose filenames do not include \"ai\", and update `frontend/src/config/siteMedia.ts` to use the new filenames. Ensure these galleries still have multiple images each after the replacement.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/public/assets/generated/banner-1.dim_1600x900.png",
-          "frontend/public/assets/generated/banner-2.dim_1600x900.png",
-          "frontend/public/assets/generated/banner-3.dim_1600x900.png",
-          "frontend/public/assets/generated/gallery-birthday-1.dim_1200x1200.png",
-          "frontend/public/assets/generated/gallery-anniversary-1.dim_1200x1200.png",
-          "frontend/public/assets/generated/gallery-welcome-baby-1.dim_1200x1200.png",
-          "frontend/public/assets/generated/gallery-home-decor-1.dim_1200x1200.png",
-          "frontend/public/assets/generated/gallery-car-decor-1.dim_1200x1200.png",
-          "frontend/src/config/siteMedia.ts",
-          "frontend/public/assets/generated/ai-banner-1.dim_1600x900.png",
-          "frontend/public/assets/generated/ai-banner-2.dim_1600x900.png",
-          "frontend/public/assets/generated/ai-banner-3.dim_1600x900.png",
-          "frontend/public/assets/generated/ai-gallery-1.dim_1200x1200.png",
-          "frontend/public/assets/generated/ai-gallery-2.dim_1200x1200.png",
-          "frontend/public/assets/generated/ai-gallery-3.dim_1200x1200.png"
-        ],
-        "matchedFiles": [
-          "frontend/public/assets/generated/banner-1.dim_1600x900.png",
-          "frontend/public/assets/generated/banner-2.dim_1600x900.png",
-          "frontend/public/assets/generated/banner-3.dim_1600x900.png",
-          "frontend/public/assets/generated/gallery-birthday-1.dim_1200x1200.png",
-          "frontend/public/assets/generated/gallery-anniversary-1.dim_1200x1200.png",
-          "frontend/public/assets/generated/gallery-welcome-baby-1.dim_1200x1200.png",
-          "frontend/public/assets/generated/gallery-home-decor-1.dim_1200x1200.png",
-          "frontend/public/assets/generated/gallery-car-decor-1.dim_1200x1200.png",
-          "frontend/src/config/siteMedia.ts",
-          "frontend/public/assets/generated/ai-banner-1.dim_1600x900.png",
-          "frontend/public/assets/generated/ai-banner-2.dim_1600x900.png",
-          "frontend/public/assets/generated/ai-banner-3.dim_1600x900.png",
-          "frontend/public/assets/generated/ai-gallery-1.dim_1200x1200.png",
-          "frontend/public/assets/generated/ai-gallery-2.dim_1200x1200.png",
-          "frontend/public/assets/generated/ai-gallery-3.dim_1200x1200.png"
+          "frontend/src/pages/HomePage.tsx"
         ]
       }
     ]
@@ -83,21 +39,8 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/public/assets/generated/ai-banner-1.dim_1600x900.png",
-    "frontend/public/assets/generated/ai-banner-2.dim_1600x900.png",
-    "frontend/public/assets/generated/ai-banner-3.dim_1600x900.png",
-    "frontend/public/assets/generated/ai-gallery-1.dim_1200x1200.png",
-    "frontend/public/assets/generated/ai-gallery-2.dim_1200x1200.png",
-    "frontend/public/assets/generated/ai-gallery-3.dim_1200x1200.png",
-    "frontend/public/assets/generated/banner-1.dim_1600x900.png",
-    "frontend/public/assets/generated/banner-2.dim_1600x900.png",
-    "frontend/public/assets/generated/banner-3.dim_1600x900.png",
-    "frontend/public/assets/generated/gallery-anniversary-1.dim_1200x1200.png",
-    "frontend/public/assets/generated/gallery-birthday-1.dim_1200x1200.png",
-    "frontend/public/assets/generated/gallery-car-decor-1.dim_1200x1200.png",
-    "frontend/public/assets/generated/gallery-home-decor-1.dim_1200x1200.png",
-    "frontend/public/assets/generated/gallery-welcome-baby-1.dim_1200x1200.png",
-    "frontend/src/config/siteMedia.ts",
+    "frontend/src/components/BannerCarousel.tsx",
+    "frontend/src/pages/HomePage.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

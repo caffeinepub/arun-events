@@ -108,11 +108,27 @@
     body {
         @apply bg-background text-foreground;
         font-feature-settings: "rlig" 1, "calt" 1;
+        font-size: 16px;
+        line-height: 1.6;
     }
     
     /* Smooth scrolling with reduced motion support */
     html {
         scroll-behavior: smooth;
+        font-size: 100%;
+    }
+    
+    /* Responsive typography base */
+    @media (max-width: 640px) {
+        html {
+            font-size: 93.75%;
+        }
+    }
+    
+    @media (min-width: 1280px) {
+        html {
+            font-size: 106.25%;
+        }
     }
     
     @media (prefers-reduced-motion: reduce) {
@@ -133,6 +149,13 @@
     *:focus-visible {
         outline: 2px solid oklch(var(--ring));
         outline-offset: 2px;
+    }
+    
+    /* Improve image rendering */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
     }
 }
 
