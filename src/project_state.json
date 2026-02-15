@@ -1,0 +1,293 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 13,
+  "summary": "Build and enhance the 'Arun Events' responsive luxury-themed marketing website for balloon decoration services (Panchkula/Chandigarh/Mohali/Zirakpur), featuring a homepage banner slider with event photos, service sections with high-quality images, smooth animations, strong CTAs (Call/WhatsApp: 9696085369), social media icons, galleries, SEO, UX/performance polish, and basic security hardening.",
+  "architectural_notes": [
+    "Static responsive HTML/CSS/JS website for 'Arun Events' with homepage categories, side menu, call/WhatsApp floating buttons, and separate category/gallery views.",
+    "Include prominent CTAs for Call/WhatsApp using the provided phone number (9696085369) across header and/or floating buttons.",
+    "Service locations displayed in the header/hero should be: Panchkula, Chandigarh, Mohali, Zirakpur.",
+    "Do not mention or label images as 'AI' anywhere in the site (UI text, captions, alt text, filenames, or marketing copy)."
+  ],
+  "known_issues": [
+    "Unwanted text appears in the UI; needs removal/cleanup.",
+    "Miscellaneous UI/content glitches reported by user; requires review and fixes."
+  ],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Realistic balloon decoration banner photo with warm premium lighting, indoor celebration setup (banner-1.dim_1600x900.png)\n- Realistic birthday balloon arch and party backdrop photo style, high detail (banner-2.dim_1600x900.png)\n- Realistic anniversary balloon decor scene photo style, elegant colors, high detail (banner-3.dim_1600x900.png)\n- Realistic birthday balloon decoration scene photo style, square crop (gallery-birthday-1.dim_1200x1200.png)\n- Realistic anniversary balloon decoration scene photo style, square crop (gallery-anniversary-1.dim_1200x1200.png)\n- Realistic welcome baby balloon decoration scene photo style, square crop (gallery-welcome-baby-1.dim_1200x1200.png)\n- Realistic home balloon decor setup photo style, square crop (gallery-home-decor-1.dim_1200x1200.png)\n- Realistic car boot balloon decor setup photo style, square crop (gallery-car-decor-1.dim_1200x1200.png)",
+  "existing_features": [
+    {
+      "id": "feature-build-the-arun-events-homepage-ui-in-react-tailwind-to-match-the-provided-html-layout-sticky-header-hamburger-menu-brand-title-service-locations-slide-in-left-side-menu-with-category-links-and-a-call-link-a-hero-banner-area-a-responsive-2x4-category-grid-2-columns-mobile-4-columns-desktop-and-floating-call-whatsapp-buttons",
+      "title": "Build the Arun Events homepage UI in React + Tailwind to match the provided HTML layout: sticky header (hamburger menu, brand title, service locations), slide-in left side menu with category links and a call link, a hero banner area, a responsive 2x4 category grid (2 columns mobile, 4 columns desktop), and floating Call + WhatsApp buttons.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-homepage-banner-slider-carousel-that-cycles-through-multiple-banner-images-with-smooth-transitions-touch-swipe-support-on-mobile-and-accessible-controls-previous-next-buttons-and-or-dots-and-supports-auto-play-with-pause-on-user-interaction",
+      "title": "Implement a homepage banner slider/carousel that cycles through multiple banner images with smooth transitions, touch swipe support on mobile, and accessible controls (previous/next buttons and/or dots) and supports auto-play with pause on user interaction.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-clickable-event-categories-birthday-decor-anniversary-decor-welcome-baby-baby-shower-car-boot-decor-naming-ceremony-kids-birthday-bachelor-decor-so-that-clicking-a-category-navigates-to-a-dedicated-category-gallery-view-that-displays-the-related-photos-in-a-responsive-grid-with-a-simple-lightbox-tap-to-open-next-prev-close",
+      "title": "Create clickable event categories (Birthday Decor, Anniversary Decor, Welcome Baby, Baby Shower, Car Boot Decor, Naming Ceremony, Kids Birthday, Bachelor Decor) so that clicking a category navigates to a dedicated category gallery view that displays the related photos in a responsive grid with a simple lightbox (tap to open, next/prev, close).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-simple-maintainable-way-to-plug-in-user-provided-photos-for-a-the-banner-slider-and-b-each-category-gallery-without-changing-ui-code-e-g-a-single-frontend-configuration-data-file-that-maps-categories-to-image-filenames",
+      "title": "Add a simple, maintainable way to plug in user-provided photos for (a) the banner slider and (b) each category gallery without changing UI code (e.g., a single frontend configuration/data file that maps categories to image filenames).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-seo-basics-for-the-site-set-per-page-document-titles-and-meta-descriptions-in-english-add-semantic-headings-landmarks-include-open-graph-twitter-meta-tags-for-sharing-and-ensure-a-crawlable-structure-for-category-pages",
+      "title": "Implement SEO basics for the site: set per-page document titles and meta descriptions in English, add semantic headings/landmarks, include Open Graph/Twitter meta tags for sharing, and ensure a crawlable structure for category pages.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-improve-smoothness-ux-performance-add-tasteful-motion-without-causing-jank-ensure-responsive-spacing-typography-use-image-optimization-best-practices-dimensions-lazy-loading-async-decoding-and-ensure-good-lighthouse-style-basics-no-layout-shift-in-banner-category-images",
+      "title": "Improve smoothness/UX/performance: add tasteful motion (without causing jank), ensure responsive spacing/typography, use image optimization best practices (dimensions, lazy-loading, async decoding), and ensure good Lighthouse-style basics (no layout shift in banner/category images).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-basic-security-hardening-appropriate-for-a-static-marketing-site-remove-reliance-on-third-party-cdn-icon-css-ensure-all-external-links-use-safe-attributes-and-document-recommended-security-headers-csp-hsts-x-content-type-options-referrer-policy-for-deployment-on-the-internet-computer-asset-canister",
+      "title": "Apply basic security hardening appropriate for a static marketing site: remove reliance on third-party CDN icon CSS, ensure all external links use safe attributes, and document recommended security headers (CSP, HSTS, X-Content-Type-Options, Referrer-Policy) for deployment on the Internet Computer asset canister.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-establish-a-coherent-visual-theme-for-the-site-colors-typography-spacing-component-styling-aligned-with-an-events-decoration-brand-and-apply-it-consistently-across-header-menu-cards-buttons-slider-controls-and-gallery-avoid-blue-purple-as-primary-colors",
+      "title": "Establish a coherent visual theme for the site (colors, typography, spacing, component styling) aligned with an events/decoration brand and apply it consistently across header, menu, cards, buttons, slider controls, and gallery (avoid blue/purple as primary colors).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-clear-maintainable-way-to-plug-in-the-user-s-balloon-decoration-photos-so-they-appear-in-1-the-homepage-banner-carousel-and-2-each-event-category-circular-thumbnail-image-on-the-homepage-without-changing-component-code-each-time-photos-are-updated",
+      "title": "Add a clear, maintainable way to plug in the user’s balloon decoration photos so they appear in (1) the homepage banner carousel and (2) each event/category circular thumbnail image on the homepage, without changing component code each time photos are updated.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-site-s-homepage-and-category-gallery-user-facing-marketing-copy-to-focus-on-balloon-decoration-services-english-while-keeping-the-existing-navigation-categories-structure-intact",
+      "title": "Update the site’s homepage and category gallery user-facing marketing copy to focus on balloon decoration services (English), while keeping the existing navigation/categories structure intact.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-homepage-banner-carousel-to-use-the-uploaded-photos-by-changing-frontend-src-config-sitemedia-ts-so-sitemedia-banners-points-to-a-curated-subset-of-the-uploaded-images-at-least-3-distinct-banner-images-using-their-new-assets-user-photos-balloon-decoration-paths",
+      "title": "Update the homepage banner carousel to use the uploaded photos by changing frontend/src/config/siteMedia.ts so siteMedia.banners points to a curated subset of the uploaded images (at least 3 distinct banner images) using their new /assets/user-photos/balloon-decoration/... paths.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-category-thumbnail-images-on-the-homepage-to-use-uploaded-photos-by-changing-frontend-src-config-sitedata-ts-the-categories-image-fields-to-reference-the-uploaded-photos-from-assets-user-photos-balloon-decoration-one-thumbnail-per-category",
+      "title": "Update category thumbnail images on the homepage to use uploaded photos by changing frontend/src/config/siteData.ts (the categories[].image fields) to reference the uploaded photos from /assets/user-photos/balloon-decoration/... (one thumbnail per category).",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-populate-category-gallery-pages-with-uploaded-photos-by-updating-frontend-src-config-sitemedia-ts-sitemedia-categorygalleries-so-each-category-slug-has-at-least-1-uploaded-photo-in-its-array-reusing-uploaded-images-across-categories-is-acceptable-if-needed",
+      "title": "Populate category gallery pages with uploaded photos by updating frontend/src/config/siteMedia.ts (siteMedia.categoryGalleries) so each category slug has at least 1 uploaded photo in its array (reusing uploaded images across categories is acceptable if needed).",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-displayed-service-locations-to-exactly-panchkula-chandigarh-mohali-zirakpur-in-that-order-everywhere-they-are-shown-used-e-g-header-locations-line-and-any-seo-text-that-uses-servicelocations",
+      "title": "Update the displayed service locations to exactly: Panchkula, Chandigarh, Mohali, Zirakpur (in that order) everywhere they are shown/used (e.g., header locations line and any SEO text that uses serviceLocations).",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-strengthen-seo-copy-to-target-top-balloon-decoration-searches-while-keeping-all-user-facing-text-in-english-update-page-titles-meta-descriptions-used-by-the-seo-system-so-they-clearly-mention-top-balloon-decoration-and-include-all-four-service-locations-panchkula-chandigarh-mohali-zirakpur-apply-this-to-the-homepage-and-each-category-gallery-page",
+      "title": "Strengthen SEO copy to target ‘top’ balloon decoration searches while keeping all user-facing text in English: update page titles/meta descriptions used by the SEO system so they clearly mention ‘Top Balloon Decoration’ and include all four service locations (Panchkula, Chandigarh, Mohali, Zirakpur). Apply this to the homepage and each category gallery page.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-photos-are-present-for-all-events-categories-by-confirming-every-existing-category-gallery-has-multiple-photos-configured-and-no-category-renders-the-balloon-decoration-photos-coming-soon-empty-state-under-normal-navigation",
+      "title": "Ensure photos are present for all events/categories by confirming every existing category gallery has multiple photos configured and no category renders the 'Balloon Decoration Photos Coming Soon' empty-state under normal navigation.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-set-of-ai-generated-event-balloon-decoration-photos-as-static-frontend-assets-and-integrate-them-into-the-existing-homepage-banner-carousel-and-category-gallery-pages-via-the-existing-configuration-files-frontend-src-config-sitemedia-ts",
+      "title": "Add a set of AI-generated event/balloon-decoration photos as static frontend assets and integrate them into the existing homepage banner carousel and category gallery pages via the existing configuration files (frontend/src/config/siteMedia.ts).",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-unwanted-text-and-fix-ui-content-glitches-across-the-site-by-auditing-the-homepage-category-gallery-pages-header-menu-and-footer-then-correcting-any-stray-placeholder-text-visual-artifacts-and-obvious-content-issues-while-keeping-all-user-facing-text-in-english",
+      "title": "Remove unwanted text and fix UI/content glitches across the site by auditing the homepage, category gallery pages, header/menu, and footer, then correcting any stray/placeholder text, visual artifacts, and obvious content issues while keeping all user-facing text in English.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-homepage-banner-carousel-media-list-to-remove-banner-4-5-and-6-i-e-remove-the-4th-5th-and-6th-entries-from-sitemedia-banners-so-only-banners-1-3-remain-in-the-slider",
+      "title": "Update the homepage banner carousel media list to remove Banner #4, #5, and #6 (i.e., remove the 4th, 5th, and 6th entries from `siteMedia.banners`) so only Banners #1–#3 remain in the slider.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-word-ai-case-insensitive-is-not-mentioned-anywhere-in-the-app-s-user-facing-text-or-image-metadata-and-is-not-present-in-any-generated-image-filenames-or-asset-paths-used-by-the-ui-including-banner-images-gallery-images-og-image-paths-and-any-alt-text-templates",
+      "title": "Ensure the word \"AI\" (case-insensitive) is not mentioned anywhere in the app’s user-facing text or image metadata, and is not present in any generated image filenames or asset paths used by the UI (including banner images, gallery images, OG image paths, and any alt text templates).",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-currently-referenced-generated-images-for-the-birthday-anniversary-welcome-baby-and-car-boot-decor-galleries-and-the-3-homepage-banners-with-new-photo-style-static-images-whose-filenames-do-not-include-ai-and-update-frontend-src-config-sitemedia-ts-to-use-the-new-filenames-ensure-these-galleries-still-have-multiple-images-each-after-the-replacement",
+      "title": "Replace the currently-referenced generated images for the Birthday, Anniversary, Welcome Baby, and Car Boot Decor galleries (and the 3 homepage banners) with new photo-style static images whose filenames do not include \"ai\", and update `frontend/src/config/siteMedia.ts` to use the new filenames. Ensure these galleries still have multiple images each after the replacement.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Integrate user-provided photos across the site (banner + event/category images)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add banner image slider/carousel on homepage",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Create clickable event categories (Birthday, Welcome Baby, etc.) that open pages/sections showing related photos (gallery)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Implement SEO improvements (meta tags, titles/descriptions, semantic structure, etc.)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Improve smoothness/UX/performance (polish UI interactions, responsiveness, load optimization)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Apply basic security hardening for the static site (safe external links, headers guidance, input-safety if forms added later)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Align site content/branding to balloon decoration services and use balloon-decoration photos for the homepage banner and category circle images",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Add social media icons/links for Instagram, Facebook, and YouTube in the site header/footer or dedicated section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add an optional customer testimonials section on the homepage for credibility",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Add the 10 user-uploaded photos (IMG_9135.png, IMG_9135-1.png, IMG_9135-2.png, IMG_9116-1.jpeg, IMG_9118.jpeg, IMG_9116-2.jpeg, IMG_9116-3.jpeg, IMG_9116-4.jpeg, IMG_9116-5.jpeg, IMG_9060.jpeg) as static frontend assets under a dedicated directory (e.g., frontend/public/assets/user-photos/balloon-decoration/), preserving filenames.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Ensure all user-facing text remains in English and keep the existing page structure and routing intact while integrating the uploaded photos (no new categories or route changes).",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Update displayed service locations to include Zirakpur (Panchkula, Chandigarh, Mohali, Zirakpur) across relevant UI areas",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Add AI-generated event photos to enhance the site imagery (where suitable, e.g., banners/galleries)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Remove unwanted text and fix other UI/content glitches across the site",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Remove homepage banner images #4, #5, and #6 from the banner slider/carousel (keep only desired banners).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Generate and integrate new (non-AI-labeled) photo-style images for Birthday, Anniversary, Welcome Baby, Home Decor, and Car Decor galleries/banners; ensure the word 'AI' is not mentioned anywhere in UI/captions/filenames/alt text.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Arun Events",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

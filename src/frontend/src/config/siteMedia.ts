@@ -1,0 +1,65 @@
+export const siteMedia = {
+  banners: [
+    '/assets/generated/banner-1.dim_1600x900.png',
+    '/assets/generated/banner-2.dim_1600x900.png',
+    '/assets/generated/banner-3.dim_1600x900.png',
+  ],
+  categoryGalleries: {
+    birthday: [
+      '/assets/generated/gallery-birthday-1.dim_1200x1200.png',
+      '/assets/user-photos/balloon-decoration/IMG_9060.jpeg',
+      '/assets/user-photos/balloon-decoration/IMG_9135.png',
+      '/assets/user-photos/balloon-decoration/IMG_9135-1.png',
+      '/assets/user-photos/balloon-decoration/IMG_9116.jpeg',
+    ],
+    anniversary: [
+      '/assets/generated/gallery-anniversary-1.dim_1200x1200.png',
+      '/assets/user-photos/balloon-decoration/IMG_9116-1.jpeg',
+      '/assets/user-photos/balloon-decoration/IMG_9116-2.jpeg',
+      '/assets/user-photos/balloon-decoration/IMG_9060.jpeg',
+      '/assets/user-photos/balloon-decoration/IMG_9118.jpeg',
+    ],
+    'welcome-baby': [
+      '/assets/generated/gallery-welcome-baby-1.dim_1200x1200.png',
+      '/assets/user-photos/balloon-decoration/IMG_9118.jpeg',
+      '/assets/user-photos/balloon-decoration/IMG_9135-2.png',
+      '/assets/user-photos/balloon-decoration/IMG_9116-5.jpeg',
+      '/assets/user-photos/balloon-decoration/IMG_9116.jpeg',
+    ],
+    'baby-shower': [
+      '/assets/generated/gallery-birthday-1.dim_1200x1200.png',
+      '/assets/user-photos/balloon-decoration/IMG_9116-2.jpeg',
+      '/assets/user-photos/balloon-decoration/IMG_9118.jpeg',
+      '/assets/user-photos/balloon-decoration/IMG_9116-3.jpeg',
+      '/assets/user-photos/balloon-decoration/IMG_9116-4.jpeg',
+    ],
+    'car-boot': [
+      '/assets/generated/gallery-car-decor-1.dim_1200x1200.png',
+      '/assets/user-photos/balloon-decoration/IMG_9116-3.jpeg',
+      '/assets/user-photos/balloon-decoration/IMG_9135.png',
+      '/assets/user-photos/balloon-decoration/IMG_9060.jpeg',
+      '/assets/user-photos/balloon-decoration/IMG_9116-1.jpeg',
+    ],
+    'naming-ceremony': [
+      '/assets/generated/gallery-welcome-baby-1.dim_1200x1200.png',
+      '/assets/user-photos/balloon-decoration/IMG_9116-4.jpeg',
+      '/assets/user-photos/balloon-decoration/IMG_9116-1.jpeg',
+      '/assets/user-photos/balloon-decoration/IMG_9116-5.jpeg',
+      '/assets/user-photos/balloon-decoration/IMG_9118.jpeg',
+    ],
+    'kids-birthday': [
+      '/assets/generated/gallery-birthday-1.dim_1200x1200.png',
+      '/assets/user-photos/balloon-decoration/IMG_9116-5.jpeg',
+      '/assets/user-photos/balloon-decoration/IMG_9060.jpeg',
+      '/assets/user-photos/balloon-decoration/IMG_9135-1.png',
+      '/assets/user-photos/balloon-decoration/IMG_9116.jpeg',
+    ],
+    bachelor: [
+      '/assets/generated/gallery-anniversary-1.dim_1200x1200.png',
+      '/assets/user-photos/balloon-decoration/IMG_9135.png',
+      '/assets/user-photos/balloon-decoration/IMG_9135-1.png',
+      '/assets/user-photos/balloon-decoration/IMG_9135-2.png',
+      '/assets/user-photos/balloon-decoration/IMG_9116-3.jpeg',
+    ],
+  } as Record<string, string[]>,
+};

@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        
+        /* Coral/Pink themed color palette for events */
+        --background: 0.99 0 0;
+        --foreground: 0.20 0 0;
+        
+        --card: 1 0 0;
+        --card-foreground: 0.20 0 0;
+        
+        --popover: 1 0 0;
+        --popover-foreground: 0.20 0 0;
+        
+        /* Primary: Coral/Pink accent */
+        --primary: 0.62 0.20 15;
+        --primary-foreground: 0.99 0 0;
+        
+        /* Secondary: Soft peach */
+        --secondary: 0.95 0.05 35;
+        --secondary-foreground: 0.30 0 0;
+        
+        --muted: 0.96 0.01 60;
+        --muted-foreground: 0.50 0.02 60;
+        
+        /* Accent: Warm rose */
+        --accent: 0.90 0.08 20;
+        --accent-foreground: 0.25 0 0;
+        
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.99 0 0;
+        
+        --border: 0.92 0.01 60;
+        --input: 0.92 0.01 60;
+        --ring: 0.62 0.20 15;
+        
+        --chart-1: 0.62 0.20 15;
+        --chart-2: 0.70 0.15 340;
+        --chart-3: 0.75 0.12 50;
+        --chart-4: 0.65 0.18 380;
+        --chart-5: 0.68 0.16 25;
+        
+        /* Sidebar with darker tones */
+        --sidebar: 0.25 0.02 20;
+        --sidebar-foreground: 0.95 0 0;
+        --sidebar-primary: 0.62 0.20 15;
+        --sidebar-primary-foreground: 0.99 0 0;
+        --sidebar-accent: 0.30 0.02 20;
+        --sidebar-accent-foreground: 0.95 0 0;
+        --sidebar-border: 0.35 0.02 20;
+        --sidebar-ring: 0.62 0.20 15;
+    }
+
+    .dark {
+        --background: 0.15 0 0;
+        --foreground: 0.95 0 0;
+        
+        --card: 0.20 0 0;
+        --card-foreground: 0.95 0 0;
+        
+        --popover: 0.18 0 0;
+        --popover-foreground: 0.95 0 0;
+        
+        /* Primary: Brighter coral for dark mode */
+        --primary: 0.70 0.22 15;
+        --primary-foreground: 0.15 0 0;
+        
+        --secondary: 0.25 0.03 20;
+        --secondary-foreground: 0.95 0 0;
+        
+        --muted: 0.25 0.02 60;
+        --muted-foreground: 0.65 0.02 60;
+        
+        --accent: 0.35 0.08 20;
+        --accent-foreground: 0.95 0 0;
+        
+        --destructive: 0.65 0.22 25;
+        --destructive-foreground: 0.15 0 0;
+        
+        --border: 0.30 0.02 60;
+        --input: 0.30 0.02 60;
+        --ring: 0.70 0.22 15;
+        
+        --chart-1: 0.70 0.22 15;
+        --chart-2: 0.75 0.18 340;
+        --chart-3: 0.80 0.15 50;
+        --chart-4: 0.72 0.20 380;
+        --chart-5: 0.73 0.18 25;
+        
+        --sidebar: 0.18 0 0;
+        --sidebar-foreground: 0.95 0 0;
+        --sidebar-primary: 0.70 0.22 15;
+        --sidebar-primary-foreground: 0.95 0 0;
+        --sidebar-accent: 0.25 0.03 20;
+        --sidebar-accent-foreground: 0.95 0 0;
+        --sidebar-border: 0.30 0.02 20;
+        --sidebar-ring: 0.70 0.22 15;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+    
+    /* Smooth scrolling with reduced motion support */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+        
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+    
+    /* Focus visible styles for accessibility */
+    *:focus-visible {
+        outline: 2px solid oklch(var(--ring));
+        outline-offset: 2px;
+    }
+}
+
+@layer utilities {
+    /* Custom animation utilities */
+    .animate-fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-15T14:56:34.127Z",
+  "summary": "`frontend/src/config/siteMedia.ts` was updated to use three non-\"ai\" banner filenames and to reference non-\"ai\" generated gallery images for several categories. However, the diff shows no new image assets added under `frontend/public/assets/generated/`, and there is insufficient evidence in the provided diff summary to confirm removal of the word \"AI\" from all user-facing text/meta/alt templates and OG/Twitter image paths across the app.",
+  "missing_requirements": [
+    {
+      "id": "REQ-22",
+      "requirement": "Ensure the word \"AI\" (case-insensitive) is not mentioned anywhere in the app’s user-facing text or image metadata, and is not present in any generated image filenames or asset paths used by the UI (including banner images, gallery images, OG image paths, and any alt text templates).",
+      "reason": "The diff only shows updates to `siteMedia.ts`. It does not provide evidence that all user-facing UI text, alt-text templates, and SEO Open Graph/Twitter image paths were checked/updated to remove \"AI\" everywhere.",
+      "evidence": [
+        "frontend/src/config/siteMedia.ts",
+        "frontend-file-summaries.txt (only summarizes other files; does not evidence removal of \"AI\" strings)"
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "requirement": "Replace the currently-referenced generated images for the Birthday, Anniversary, Welcome Baby, and Car Boot Decor galleries (and the 3 homepage banners) with new photo-style static images whose filenames do not include \"ai\", update `frontend/src/config/siteMedia.ts`, and ensure newly-added generated image files are stored under `frontend/public/assets/generated/`.",
+      "reason": "While `siteMedia.ts` now references non-\"ai\" filenames, the diff indicates no files were added, so there is no evidence the required new static image files were actually added under `frontend/public/assets/generated/`.",
+      "evidence": [
+        "frontend/src/config/siteMedia.ts",
+        "<file-diff> Added: 0 files (no new assets under frontend/public/assets/generated/)"
+      ]
+    }
+  ],
+  "hallucinated_features": [],
+  "confidence": 0.64,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/config/siteMedia.ts",
+    "project_state.json"
+  ]
+}
