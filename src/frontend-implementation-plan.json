@@ -1,38 +1,47 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Homepage banner autoplay enablement and copy update to remove 'delivery'",
+  "title": "Netlify-ready frontend ZIP export + deploy documentation",
   "requirements": [
     {
-      "id": "REQ-38",
-      "summary": "Enable homepage banner carousel autoplay by default when 2+ banners exist, preserving pause-on-interaction and manual navigation behavior.",
+      "id": "REQ-1",
+      "summary": "Ensure the existing Netlify export workflow reliably generates `frontend/netlify-dist.zip` with required files at the ZIP root and fails with actionable errors when verification checks fail.",
       "acceptanceCriteria": [
-        "On the homepage, when `siteMedia.banners.length >= 2`, the banner advances automatically on a timer without requiring user input.",
-        "Carousel autoplay is not paused by default on initial page load.",
-        "Manual navigation (previous/next buttons and dots) continues to work and does not break autoplay.",
-        "When the user interacts (hover/focus) the carousel pauses, and it resumes afterward (current behavior preserved)."
+        "After running the export workflow, the file `frontend/netlify-dist.zip` exists in the repository workspace.",
+        "The ZIP contains the built site at the ZIP root (i.e., `index.html` is at the root of the ZIP, not nested under a `dist/` folder).",
+        "The ZIP includes the critical Netlify/SEO files: `index.html`, `googlecdab296682a0e0eb.html`, and `_redirects`.",
+        "If the export workflow fails (missing critical files or failing Google verification meta tag check), it exits with a non-zero code and prints an actionable error message."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/BannerCarousel.tsx",
+          "path": "frontend/scripts/export-netlify-zip.mjs",
           "operation": "modify",
-          "description": "Adjust carousel pause/autoplay logic to ensure autoplay runs by default when there are 2+ banners, and expand interaction pausing to reliably cover hover, focus-within, and touch/pointer interactions while keeping existing next/previous buttons and dot navigation working alongside autoplay."
+          "description": "Harden the Netlify export workflow to strictly validate that `dist/index.html`, `dist/googlecdab296682a0e0eb.html`, and `dist/_redirects` exist and that the Google verification meta tag matches; ensure failure paths print actionable guidance (e.g., which source file to fix / what command to rerun) and exit non-zero."
+        },
+        {
+          "path": "frontend/package.json",
+          "operation": "create",
+          "description": "Add (or, if it already exists in the project, update) a single, copy-pasteable npm script (e.g., `export:netlify`) that runs the existing workflow in `frontend/scripts/export-netlify-zip.mjs` from the `frontend` directory and produces `frontend/netlify-dist.zip`."
+        },
+        {
+          "path": "frontend/netlify-dist.zip",
+          "operation": "create",
+          "description": "Generate and place the Netlify-ready export ZIP in the workspace at `frontend/netlify-dist.zip` by running the existing export workflow; confirm the ZIP root contains `index.html` and includes `googlecdab296682a0e0eb.html` and `_redirects`."
         }
       ]
     },
     {
-      "id": "REQ-39",
-      "summary": "Remove 'delivery' wording from all user-facing copy and replace with service-appropriate English phrasing ('on-time service'/'on-time setup').",
+      "id": "REQ-2",
+      "summary": "Update `frontend/NETLIFY_DEPLOY.md` with a one-command export instruction (run from `frontend`) and concise manual Netlify upload steps for `frontend/netlify-dist.zip`.",
       "acceptanceCriteria": [
-        "No user-facing text anywhere in the frontend contains the word \"delivery\" (case-insensitive).",
-        "The homepage \"Why Choose Us\" section replaces the phrase \"on-time delivery\" with \"on-time service\" (or \"on-time setup\") while keeping the sentence grammatically correct.",
-        "All updated text remains in English and matches the existing marketing tone."
+        "`frontend/NETLIFY_DEPLOY.md` contains a complete, copy-pasteable command that generates `frontend/netlify-dist.zip` when run from the `frontend` directory.",
+        "`frontend/NETLIFY_DEPLOY.md` includes concise steps for Netlify manual deploy (Add new site → Deploy manually → upload `netlify-dist.zip`)."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/HomePage.tsx",
+          "path": "frontend/NETLIFY_DEPLOY.md",
           "operation": "modify",
-          "description": "Update the homepage 'Why Choose Us' copy to replace 'on-time delivery' with service-appropriate wording (e.g., 'on-time service' and/or 'on-time setup') and ensure no remaining user-facing 'delivery' text remains in this view."
+          "description": "Complete the guide by adding the exact one-command export instruction to be run from the `frontend` directory (calling the export workflow that creates `frontend/netlify-dist.zip`) and add concise manual Netlify deploy steps (Add new site → Deploy manually → upload `netlify-dist.zip`)."
         }
       ]
     }

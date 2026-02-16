@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arunevents-a37ni-iaaaa-aaaan-qjp7a-cai.icp0.io/sitemap.xml

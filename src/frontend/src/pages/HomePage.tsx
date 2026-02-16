@@ -1,12 +1,13 @@
 import BannerCarousel from '../components/BannerCarousel';
 import CategoryGrid from '../components/CategoryGrid';
+import ServiceAreasPopularSearches from '../components/ServiceAreasPopularSearches';
 import { useSeo } from '../hooks/useSeo';
 import { siteData } from '../config/siteData';
 
 export default function HomePage() {
   useSeo({
-    title: `${siteData.brandName} - Top Balloon Decoration Services in ${siteData.serviceLocations.join(', ')}`,
-    description: `Top balloon decoration services for all events - birthdays, anniversaries, baby showers, and more. Expert balloon arrangements and event decor serving ${siteData.serviceLocations.join(', ')}. Transform your celebrations with stunning balloon decorations by the top balloon decoration experts.`,
+    title: `${siteData.brandName} - Balloon Decoration Near Me | Best Balloon Decor Panchkula, Chandigarh, Mohali, Zirakpur`,
+    description: `Looking for balloon decoration near me? Arun Events offers the best balloon decor Panchkula, birthday decoration Chandigarh, baby shower decoration Mohali, and balloon decor Zirakpur. Professional balloon decoration services for all events.`,
     ogImage: '/assets/generated/og-image.dim_1200x630.png',
   });
 
@@ -66,6 +67,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <ServiceAreasPopularSearches />
     </div>
   );
 }

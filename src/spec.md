@@ -1,10 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Make the homepage banner carousel autoplay by default and update site copy to remove “delivery” wording so it reads like a service website.
+**Goal:** Produce a Netlify-ready frontend export ZIP for manual upload, and document the exact export/deploy steps.
 
 **Planned changes:**
-- Enable banner carousel auto-sliding on the homepage when 2+ banner images are configured, while preserving existing pause-on-interaction and manual navigation behavior.
-- Replace all user-facing uses of the word “delivery” with service-appropriate English wording (e.g., “on-time service” / “on-time setup”) across the frontend.
+- Run/enable the existing Netlify export workflow to generate `frontend/netlify-dist.zip` with `index.html` at the ZIP root and include critical files (`index.html`, `googlecdab296682a0e0eb.html`, `_redirects`).
+- Ensure the export workflow fails with a non-zero exit code and prints an actionable error if critical files are missing or the Google verification meta tag check fails.
+- Update `frontend/NETLIFY_DEPLOY.md` with a single copy-pasteable command (run from the `frontend` directory) that generates `frontend/netlify-dist.zip`, plus concise manual Netlify deploy steps (Add new site → Deploy manually → upload `netlify-dist.zip`).
 
-**User-visible outcome:** The homepage banner rotates automatically (when multiple banners exist) and all website text reads as a service offering (no “delivery” wording remains).
+**User-visible outcome:** The user can run one command to generate `frontend/netlify-dist.zip` and manually upload it to Netlify to deploy the built frontend.

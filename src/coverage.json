@@ -1,36 +1,34 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-15T16:30:10.702Z",
+  "generatedAt": "2026-02-16T12:02:18.201Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
     "total": 2,
-    "implemented": 2,
+    "implemented": 0,
     "items": [
       {
-        "id": "REQ-38",
-        "summary": "Ensure the homepage banner carousel auto-slides (autoplays) by default when there are 2+ banner images configured, while keeping existing pause-on-user-interaction behavior (hover/focus/touch interaction should pause and manual next/previous controls should still work).",
-        "status": "implemented",
+        "id": "REQ-1",
+        "summary": "Provide a Netlify-ready frontend export ZIP at `frontend/netlify-dist.zip` by running the existing Netlify export workflow so the user can manually upload it to Netlify.",
+        "status": "missing",
         "plannedFiles": [
-          "frontend/src/components/BannerCarousel.tsx"
+          "frontend/scripts/export-netlify-zip.mjs",
+          "frontend/package.json",
+          "frontend/netlify-dist.zip"
         ],
-        "matchedFiles": [
-          "frontend/src/components/BannerCarousel.tsx"
-        ]
+        "matchedFiles": []
       },
       {
-        "id": "REQ-39",
-        "summary": "Remove the word \"delivery\" from all user-facing website copy and replace it with service-appropriate wording in English (use \"on-time service\" and/or \"on-time setup\" depending on context), ensuring the site reads like a service website.",
-        "status": "implemented",
+        "id": "REQ-2",
+        "summary": "Update `frontend/NETLIFY_DEPLOY.md` to include the missing one-command export instruction (including the exact command to run from the `frontend` directory) and the manual Netlify upload steps for deploying `frontend/netlify-dist.zip`.",
+        "status": "missing",
         "plannedFiles": [
-          "frontend/src/pages/HomePage.tsx"
+          "frontend/NETLIFY_DEPLOY.md"
         ],
-        "matchedFiles": [
-          "frontend/src/pages/HomePage.tsx"
-        ]
+        "matchedFiles": []
       }
     ]
   },
@@ -39,8 +37,6 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/components/BannerCarousel.tsx",
-    "frontend/src/pages/HomePage.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

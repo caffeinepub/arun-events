@@ -1,41 +1,4 @@
 {
   "kind": "feature_evidence_report",
-  "features": [
-    {
-      "featureId": "feature-ensure-the-homepage-banner-carousel-auto-slides-autoplays-by-default-when-there-are-2-banner-images-configured-while-keeping-existing-pause-on-user-interaction-behavior-hover-focus-touch-interaction-should-pause-and-manual-next-previous-controls-should-still-work",
-      "featureTitle": "Ensure the homepage banner carousel auto-slides (autoplays) by default when there are 2+ banner images configured, while keeping existing pause-on-user-interaction behavior (hover/focus/touch interaction should pause and manual next/previous controls should still work).",
-      "files": [
-        "frontend/src/components/BannerCarousel.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-38"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-remove-the-word-delivery-from-all-user-facing-website-copy-and-replace-it-with-service-appropriate-wording-in-english-use-on-time-service-and-or-on-time-setup-depending-on-context-ensuring-the-site-reads-like-a-service-website",
-      "featureTitle": "Remove the word \"delivery\" from all user-facing website copy and replace it with service-appropriate wording in English (use \"on-time service\" and/or \"on-time setup\" depending on context), ensuring the site reads like a service website.",
-      "files": [
-        "frontend/src/pages/HomePage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-39"
-      ],
-      "confidence": "high"
-    }
-  ]
+  "features": []
 }

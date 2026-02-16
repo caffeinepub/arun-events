@@ -31,10 +31,10 @@ export default function CategoryGalleryPage() {
 
   useSeo({
     title: category
-      ? `${category.name} Balloon Decoration - Arun Events`
+      ? `${category.name} Balloon Decoration - Balloon Decor Panchkula | Arun Events`
       : 'Category Not Found - Arun Events',
     description: category
-      ? `Browse our stunning ${category.name.toLowerCase()} balloon decoration gallery. Top balloon decoration services for all events in ${siteData.serviceLocations.join(', ')}. Professional balloon arrangements and creative designs.`
+      ? `Browse our stunning ${category.name.toLowerCase()} balloon decoration gallery. Best balloon decor Panchkula, Chandigarh, Mohali, and Zirakpur. Professional ${category.name.toLowerCase()} balloon arrangements and creative designs for your special celebration.`
       : 'Category not found',
     ogImage: '/assets/generated/og-image.dim_1200x630.png',
   });

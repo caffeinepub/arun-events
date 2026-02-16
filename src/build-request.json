@@ -1,54 +1,54 @@
 {
   "kind": "build_request",
-  "title": "Ensure banner auto-slide is enabled and remove 'delivery' wording from site copy",
+  "title": "Generate a Netlify-ready frontend ZIP for manual upload",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-38",
-      "text": "Ensure the homepage banner carousel auto-slides (autoplays) by default when there are 2+ banner images configured, while keeping existing pause-on-user-interaction behavior (hover/focus/touch interaction should pause and manual next/previous controls should still work).",
+      "id": "REQ-1",
+      "text": "Provide a Netlify-ready frontend export ZIP at `frontend/netlify-dist.zip` by running the existing Netlify export workflow so the user can manually upload it to Netlify.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-3"
         ],
         "quotes": [
-          "Banner auto slide karde bhai"
+          "Yes"
         ]
       },
       "acceptanceCriteria": [
-        "On the homepage, when `siteMedia.banners.length >= 2`, the banner advances automatically on a timer without requiring user input.",
-        "Carousel autoplay is not paused by default on initial page load.",
-        "Manual navigation (previous/next buttons and dots) continues to work and does not break autoplay.",
-        "When the user interacts (hover/focus) the carousel pauses, and it resumes afterward (current behavior preserved)."
+        "After running the export workflow, the file `frontend/netlify-dist.zip` exists in the repository workspace.",
+        "The ZIP contains the built site at the ZIP root (i.e., `index.html` is at the root of the ZIP, not nested under a `dist/` folder).",
+        "The ZIP includes the critical Netlify/SEO files: `index.html`, `googlecdab296682a0e0eb.html`, and `_redirects`.",
+        "If the export workflow fails (missing critical files or failing Google verification meta tag check), it exits with a non-zero code and prints an actionable error message."
       ]
     },
     {
-      "id": "REQ-39",
-      "text": "Remove the word \"delivery\" from all user-facing website copy and replace it with service-appropriate wording in English (use \"on-time service\" and/or \"on-time setup\" depending on context), ensuring the site reads like a service website.",
+      "id": "REQ-2",
+      "text": "Update `frontend/NETLIFY_DEPLOY.md` to include the missing one-command export instruction (including the exact command to run from the `frontend` directory) and the manual Netlify upload steps for deploying `frontend/netlify-dist.zip`.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-3"
         ],
         "quotes": [
-          "delivery remove krde service on time kr service website hai"
+          "Yes"
         ]
       },
       "acceptanceCriteria": [
-        "No user-facing text anywhere in the frontend contains the word \"delivery\" (case-insensitive).",
-        "The homepage \"Why Choose Us\" section replaces the phrase \"on-time delivery\" with \"on-time service\" (or \"on-time setup\") while keeping the sentence grammatically correct.",
-        "All updated text remains in English and matches the existing marketing tone."
+        "`frontend/NETLIFY_DEPLOY.md` contains a complete, copy-pasteable command that generates `frontend/netlify-dist.zip` when run from the `frontend` directory.",
+        "`frontend/NETLIFY_DEPLOY.md` includes concise steps for Netlify manual deploy (Add new site → Deploy manually → upload `netlify-dist.zip`)."
       ]
     }
   ],
   "constraints": [
-    "Do not edit any files under `frontend/src/components/ui` (Shadcn read-only components).",
-    "Do not modify files listed in `frontend.immutablePaths` in SYSTEM_CONTEXT.",
-    "Keep existing routes and navigation structure unchanged."
+    "Backend must remain single-actor Motoko; do not introduce additional backend services.",
+    "Do not modify any files under `frontend/src/hooks/useInternetIdentity.ts`, `frontend/src/hooks/useInternetIdentity.tsx`, `frontend/src/hooks/useActor.ts`, `frontend/src/main.tsx`, or anything under `frontend/src/components/ui` (compose instead of editing).",
+    "Use English for any user-facing text."
   ],
   "nonGoals": [
-    "Adding new pages, new categories, or changing the banner images list/content beyond what is required to ensure autoplay works.",
-    "Backend changes (Motoko) are not required for these updates."
+    "Adding new product features to the app UI.",
+    "Changing site content, branding, routing behavior, or SEO strategy beyond what is required for the ZIP export and documentation.",
+    "Adding or modifying backend canister logic (not needed for a static Netlify deploy ZIP)."
   ],
   "imageRequirements": {
     "required": [],

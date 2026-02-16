@@ -11,8 +11,13 @@ export function useSeo({ title, description, ogImage }: SeoOptions) {
     // Set document title
     document.title = title;
 
-    // Set or update meta tags
+    // Set or update meta tags (excluding google-site-verification)
     const setMetaTag = (name: string, content: string, property?: boolean) => {
+      // Never touch the google-site-verification meta tag
+      if (name === 'google-site-verification') {
+        return;
+      }
+
       const attribute = property ? 'property' : 'name';
       let element = document.querySelector(`meta[${attribute}="${name}"]`);
       
@@ -24,6 +29,23 @@ export function useSeo({ title, description, ogImage }: SeoOptions) {
       
       element.setAttribute('content', content);
     };
+
+    // Manage canonical link dynamically
+    const setCanonicalLink = () => {
+      const canonicalUrl = `${window.location.origin}${window.location.pathname}`;
+      let canonicalElement = document.querySelector('link[rel="canonical"]');
+      
+      if (!canonicalElement) {
+        canonicalElement = document.createElement('link');
+        canonicalElement.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonicalElement);
+      }
+      
+      canonicalElement.setAttribute('href', canonicalUrl);
+    };
+
+    // Set canonical link
+    setCanonicalLink();
 
     // Standard meta tags
     setMetaTag('description', description);

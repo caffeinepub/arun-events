@@ -1,25 +1,60 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-15T16:30:10.699Z",
-  "summary": "REQ-38 appears implemented by adding an autoplay interval when there are 2+ banners and pausing/resuming on user interaction, while preserving manual controls. REQ-39 is only evidenced as updated in the HomePage “Why Choose Us” section; the diff does not provide evidence that the word “delivery” was removed from all user-facing frontend copy site-wide.",
+  "generatedAt": "2026-02-16T12:02:18.198Z",
+  "summary": "The diff does not implement the requested Netlify export ZIP workflow/artifact or the NETLIFY_DEPLOY.md documentation updates. Instead, it records/reflects substantial unrelated frontend UI/SEO/component/config changes and adds security/tailwind/style updates not requested by the BuildRequest.",
   "missing_requirements": [
     {
-      "id": "REQ-39",
-      "requirement": "Remove the word \"delivery\" from all user-facing website copy and replace it with service-appropriate wording in English (use \"on-time service\" and/or \"on-time setup\" depending on context), ensuring the site reads like a service website.",
-      "reason": "The diff shows a copy change on the homepage, but does not show (or summarize) changes across the rest of the frontend to ensure there are no remaining occurrences of \"delivery\" (case-insensitive) anywhere user-facing.",
+      "id": "REQ-1",
+      "requirement": "Provide a Netlify-ready frontend export ZIP at `frontend/netlify-dist.zip` via the existing Netlify export workflow (including checks for required files and non-zero exit with actionable error on failure).",
+      "reason": "No evidence in the diff summary of any build/export script, CI task, packaging step, or repository artifact creation for `frontend/netlify-dist.zip`, nor any logic implementing required-file checks or failure behavior.",
       "evidence": [
-        "frontend/src/pages/HomePage.tsx",
-        "frontend-file-summaries.txt (truncated)"
+        "project_state.json",
+        "frontend-file-summaries.txt"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Update `frontend/NETLIFY_DEPLOY.md` with a one-command export instruction (run from `frontend`) and manual Netlify upload steps for `frontend/netlify-dist.zip`.",
+      "reason": "`frontend/NETLIFY_DEPLOY.md` is not shown as modified, and no documentation changes related to the export command or manual deploy steps appear in the diff summary.",
+      "evidence": [
+        "project_state.json"
       ]
     }
   ],
-  "hallucinated_features": [],
-  "confidence": 0.7,
+  "hallucinated_features": [
+    {
+      "description": "Broad UI/content/SEO changes across App, pages, components (router/routes, homepage sections, category gallery SEO copy, header/side menu/floating buttons, carousel, grids, lightbox, icons, site data/media config).",
+      "reason": "BuildRequest explicitly scoped to producing a Netlify-ready ZIP artifact and updating deployment documentation; it also lists non-goals including not adding new product features or changing site content/branding/routing/SEO beyond what’s required for ZIP export/docs.",
+      "evidence": [
+        "frontend-file-summaries.txt"
+      ]
+    },
+    {
+      "description": "Added/updated security documentation and styling/tooling configuration (SECURITY.md, global CSS, Tailwind config changes).",
+      "reason": "Not requested by REQ-1/REQ-2 and outside the stated goals (Netlify ZIP export + deploy doc update).",
+      "evidence": [
+        "frontend-file-summaries.txt"
+      ]
+    },
+    {
+      "description": "Updated `frontend/index.html` SEO/meta content including a changed Google Search Console verification meta tag.",
+      "reason": "Not requested by REQ-1/REQ-2; also risks interfering with the required export workflow verification expectations rather than implementing them.",
+      "evidence": [
+        "frontend-file-summaries.txt"
+      ]
+    },
+    {
+      "description": "Updated `project_state.json` to add/track internal requests AR-1/AR-2/AR-3 as pending.",
+      "reason": "BuildRequest does not ask for project tracking/state file updates.",
+      "evidence": [
+        "project_state.json"
+      ]
+    }
+  ],
+  "confidence": 0.78,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/src/components/BannerCarousel.tsx",
-    "frontend/src/pages/HomePage.tsx",
     "project_state.json"
   ]
 }

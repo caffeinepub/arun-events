@@ -6,7 +6,7 @@ import SideMenu from './components/SideMenu';
 import FloatingContactButtons from './components/FloatingContactButtons';
 import { useState } from 'react';
 import { siteData } from './config/siteData';
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone, MessageCircle, Heart } from 'lucide-react';
 
 // Layout component that wraps all pages
 function Layout() {
@@ -46,10 +46,21 @@ function Layout() {
             </div>
           </div>
           
-          {/* Copyright */}
+          {/* Copyright and Attribution */}
           <div className="text-center text-sm text-muted-foreground border-t border-border pt-6">
-            <p>
+            <p className="mb-2">
               © {new Date().getFullYear()} Arun Events. All rights reserved.
+            </p>
+            <p className="flex items-center justify-center gap-1.5 text-xs">
+              Built with <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500" /> using{' '}
+              <a
+                href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(typeof window !== 'undefined' ? window.location.hostname : 'arun-events')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                caffeine.ai
+              </a>
             </p>
           </div>
         </div>
